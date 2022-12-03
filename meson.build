@@ -26,7 +26,7 @@ else
     curl_options = cmake.subproject_options()
 
     if host_machine.system() == 'windows'
-        curl_options.add_cmake_defines({'CURL_TARGET_WINDOWS_VERSION': '0x601', 'CMAKE_USE_SCHANNEL': true})
+        curl_options.add_cmake_defines({'CURL_TARGET_WINDOWS_VERSION': '0x601', 'CMAKE_USE_SCHANNEL': true, 'CMAKE_USE_LIBSSH2': false, 'CURL_ZLIB': false})
     elif host_machine.system() == 'darwin'
         curl_options.add_cmake_defines({'CMAKE_USE_SECTRANSP': true})
     endif
